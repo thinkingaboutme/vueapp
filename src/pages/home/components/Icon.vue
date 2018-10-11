@@ -102,4 +102,5 @@ export default {
         width:60%
       .icon-desc
         line-height: .44rem
+        font-size: .28rem
 </style>
