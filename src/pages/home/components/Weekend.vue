@@ -2,25 +2,11 @@
   <div class="remmend">
     <div class="remmend-title">周末去哪儿</div>
     <div class="list">
-      <div class="list-item border-bottom">
-        <img class="item-img" src="http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg"/>
+      <div class="list-item border-bottom" v-for="item of list" :key="item.id">
+        <img class="item-img" :src="item.imgUrl"/>
         <div class="item-right">
-          <div class="item-title">宁乡炭河古城</div>
-          <div class="item-desc">宁乡炭河古城</div>
-        </div>
-      </div>
-      <div class="list-item border-bottom">
-        <img class="item-img" src="http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg"/>
-        <div class="item-right">
-          <div class="item-title">宁乡炭河古城</div>
-          <div class="item-desc">宁乡炭河古城</div>
-        </div>
-      </div>
-      <div class="list-item border-bottom">
-        <img class="item-img" src="http://img1.qunarzz.com/sight/source/1505/fb/302620ed8350f8.jpg_r_640x214_25a07cb4.jpg"/>
-        <div class="item-right">
-          <div class="item-title">宁乡炭河古城</div>
-          <div class="item-desc">宁乡炭河古城</div>
+          <div class="item-title">{{item.title}}</div>
+          <div class="item-desc">{{item.desc}}</div>
         </div>
       </div>
     </div>
@@ -29,7 +15,10 @@
 
 <script>
 export default {
-  name: 'HomeWeekend'
+  name: 'HomeWeekend',
+  props: {
+    list: Array
+  }
 }
 </script>
 

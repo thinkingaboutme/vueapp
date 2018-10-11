@@ -2,27 +2,11 @@
   <div class="remmend">
     <div class="remmend-title">热门推荐</div>
     <div class="list">
-      <div class="list-item border-bottom">
-        <img class="item-img" src="http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg"/>
+      <div class="list-item border-bottom" v-for="item of list" :key="item.id">
+        <img class="item-img" :src="item.imgUrl"/>
         <div class="item-right">
-          <div class="item-title">宁乡炭河古城</div>
-          <div class="item-desc">宁乡炭河古城</div>
-          <button class="item-btn">查看详情</button>
-        </div>
-      </div>
-      <div class="list-item border-bottom">
-        <img class="item-img" src="http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg"/>
-        <div class="item-right">
-          <div class="item-title">宁乡炭河古城</div>
-          <div class="item-desc">宁乡炭河古城</div>
-          <button class="item-btn">查看详情</button>
-        </div>
-      </div>
-      <div class="list-item border-bottom">
-        <img class="item-img" src="http://img1.qunarzz.com/sight/p0/1710/f5/f575b0f463058f96a3.img.jpg_200x200_e772e5ef.jpg"/>
-        <div class="item-right">
-          <div class="item-title">宁乡炭河古城</div>
-          <div class="item-desc">宁乡炭河古城</div>
+          <div class="item-title">{{item.title}}</div>
+          <div class="item-desc">{{item.desc}}</div>
           <button class="item-btn">查看详情</button>
         </div>
       </div>
@@ -32,7 +16,10 @@
 
 <script>
 export default {
-  name: 'HomeRemmend'
+  name: 'HomeRemmend',
+  props: {
+    list: Array
+  }
 }
 </script>
 
