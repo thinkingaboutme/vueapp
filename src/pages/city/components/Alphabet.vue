@@ -1,19 +1,28 @@
 <template>
   <div class="alphabet">
     <ul class="alphabet-list">
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
-      <li>A</li>
+      <li
+        v-for="(item, key) of cities"
+        :key="key"
+        @click="handleClickBetter"
+      >
+        {{key}}
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CityAlphabet'
+  name: 'CityAlphabet',
+  props: {
+    cities: Object
+  },
+  methods: {
+    handleClickBetter (e) {
+      this.$emit('change', e.target.innerText)
+    }
+  }
 }
 </script>
 
