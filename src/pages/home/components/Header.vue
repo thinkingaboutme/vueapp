@@ -8,7 +8,7 @@
            输入城市/景点/游玩主题
     </div>
     <router-link tag="div" class="header-city" to="/city">
-      {{city}}
+      {{this.$store.state.city}}
       <span class="iconfont icon-jiantou">&#xe61c;</span>
     </router-link>
   </div>
@@ -16,10 +16,7 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
-  props: {
-    city: String
-  }
+  name: 'HomeHeader'
 }
 </script>
 
@@ -36,8 +33,9 @@ export default {
       font-weight:bold
       font-size:.40rem
     .header-city
-      width:1.32rem
+      min-width:.92rem
       height:.88rem
+      padding:0  .2rem
       line-height:.88rem
       text-align:center
       .icon-jiantou

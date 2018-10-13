@@ -3,7 +3,6 @@
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
     <city-list
-      :city="city"
       :hot="hotCity"
       :cities="cities"
       :better="better"
@@ -31,7 +30,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       hotCity: [],
       cities: {},
       better: ''
@@ -49,7 +47,6 @@ export default {
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
-        this.city = data.city
         this.hotCity = data.hotCities
         this.cities = data.cities
       }

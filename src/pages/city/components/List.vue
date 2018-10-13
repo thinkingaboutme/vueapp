@@ -4,7 +4,7 @@
       <div class="list-area">
         <div class="list-title border-topbottom">当前城市</div>
         <div class="list-wapper">
-          <div class="list-item">{{this.city}}</div>
+          <div class="list-item">{{this.$store.state.city}}</div>
         </div>
       </div>
       <div class="list-area">
@@ -14,6 +14,7 @@
             class="list-item"
             v-for="item of hot"
             :key="item.id"
+            @click="handleClickCity(item.name)"
           >
             {{item.name}}
           </div>
@@ -31,6 +32,7 @@
             class="list-city border-bottom"
             v-for="item of city"
             :key="item.id"
+            @click="handleClickCity(item.name)"
           >
             {{item.name}}
           </div>
@@ -45,10 +47,15 @@ import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
   props: {
-    city: String,
     hot: Array,
     cities: Object,
     better: String
+  },
+  methods: {
+    handleClickCity (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     better () {
