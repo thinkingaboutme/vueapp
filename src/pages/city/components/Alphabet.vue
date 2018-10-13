@@ -49,13 +49,12 @@ export default {
         if (this.timer) {
           clearInterval(this.timer)
         }
-        let _this = this
-        this.timer = setTimeout(function () {
+        this.timer = setTimeout(() => {
           const touchY = e.targetTouches[0].clientY
-          const startY = _this.$refs['A'][0].offsetTop
+          const startY = this.$refs['A'][0].offsetTop
           const index = Math.floor((touchY - startY) / 20)
-          if (index >= 0 && index <= _this.letters.length) {
-            _this.$emit('change', _this.letters[index])
+          if (index >= 0 && index <= this.letters.length) {
+            this.$emit('change', this.letters[index])
           }
         }, 16)
       }
