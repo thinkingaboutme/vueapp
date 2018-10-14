@@ -35,6 +35,9 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.windowScroll)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.windowScroll)
   }
 }
 </script>
@@ -64,6 +67,7 @@ export default {
     top:0
     left:0
     right:0
+    z-index:2
     .header-back-fixed
       width: .64rem
       position: absolute

@@ -40,7 +40,7 @@ export default {
       this.better = better
     },
     getCityInfo () {
-      axios.get('/static/mock/city.json')
+      axios.get('/api/mock/city.json')
         .then(this.getCityInfoSucc)
     },
     getCityInfoSucc (res) {
