@@ -23,7 +23,7 @@ export default new Vuex.Store({
     changeCity (state, city) {
       state.city = city
       try {
-        if (localStorage.city) {
+        if (localStorage) {
           localStorage.city = city
         }
       } catch (e) {}
