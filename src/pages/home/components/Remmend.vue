@@ -2,14 +2,14 @@
   <div class="remmend">
     <div class="remmend-title">热门推荐</div>
     <div class="list">
-      <div class="list-item border-bottom" v-for="item of list" :key="item.id">
+      <router-link tag="div" class="list-item border-bottom" v-for="item of list" :key="item.id" :to="'/detail/'+ item.id">
         <img class="item-img" :src="item.imgUrl"/>
         <div class="item-right">
           <div class="item-title">{{item.title}}</div>
           <div class="item-desc">{{item.desc}}</div>
           <button class="item-btn">查看详情</button>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

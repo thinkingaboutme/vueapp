@@ -4,7 +4,7 @@
       <div class="list-area">
         <div class="list-title border-topbottom">当前城市</div>
         <div class="list-wapper">
-          <div class="list-item">{{this.$store.state.city}}</div>
+          <div class="list-item">{{this.city}}</div>
         </div>
       </div>
       <div class="list-area">
@@ -44,12 +44,16 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState } from 'vuex'
 export default {
   name: 'CityList',
   props: {
     hot: Array,
     cities: Object,
     better: String
+  },
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     handleClickCity (city) {
